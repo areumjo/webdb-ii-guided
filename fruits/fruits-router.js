@@ -8,6 +8,7 @@ const db = require('../data/dbConfig.js');
 
 const router = express.Router();
 
+// localhost:5000/api/fruits -- GET
 router.get('/', (req, res) => {
   db('fruits')
   .then(fruits => {

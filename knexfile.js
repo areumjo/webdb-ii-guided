@@ -10,9 +10,11 @@ module.exports = {
     useNullAsDefault: true,
     migrations: {
       directory: './data/migrations'
+    },
+    seeds: {
+      directory: './data/seeds'
     }
   },
-
 };
 
 //  knex migrate:make fruit-schema ==> generate migration file (name starts date)
@@ -27,6 +29,11 @@ module.exports = {
 
 //  knex migrate:latest ==> Batch 2 run: 1 migrations
 
-
 //  **ADD data**
 //  use postman -- endpoint POST
+
+//  **Seed**
+//  knex seed:make 01-fruits ==> add number in front of name ==> it will clear previous database and make
+//  - 1. change table-name in the seed file and change `del` to `truncate` ==> truncate gives us starting id=1 each time
+//  - 2. add array of seed data
+//  knex seed:run
